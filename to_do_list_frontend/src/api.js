@@ -1,3 +1,9 @@
+/**
+ * API base URL:
+ * - Uses REACT_APP_API_URL if provided in .env
+ * - Falls back to http://localhost:5001
+ * Endpoints here are aligned with backend routes defined in tasks_database/api_server.py
+ */
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 // Helper to handle JSON responses and errors

@@ -27,6 +27,26 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## Environment Configuration
+
+This app talks to a backend API. The base URL is controlled by the environment variable `REACT_APP_API_URL`.
+
+- Default fallback in code: `http://localhost:5001`
+- You can override via `.env`:
+
+```
+REACT_APP_API_URL=http://localhost:5001
+```
+
+The frontend API module (src/api.js) uses this URL and appends endpoint paths such as:
+- GET    /tasks
+- POST   /tasks
+- PUT    /tasks/:id
+- PATCH  /tasks/:id/toggle
+- DELETE /tasks/:id
+
+Ensure the backend exposes matching routes and has CORS enabled for requests from http://localhost:3000.
+
 ## Customization
 
 ### Colors
